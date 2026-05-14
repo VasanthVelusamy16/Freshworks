@@ -1,82 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src='https://whatadrag-naruto.myfreshworks.com/crm/sales/web_forms/9285414a2690254cc49a992eabc81f6703d2559f58d48665582d3d3440021f2a/form.js'crossorigin='anonymous' id='fs_9285414a2690254cc49a992eabc81f6703d2559f58d48665582d3d3440021f2a'></script>
-  <script src='//fw-cdn.com/11827178/4425637.js' chat='true'></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Web Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src='https://whatadrag-naruto.myfreshworks.com/crm/sales/web_forms/9285414a2690254cc49a992eabc81f6703d2559f58d48665582d3d3440021f2a/form.js' crossorigin='anonymous' id='fs_9285414a2690254cc49a992eabc81f6703d2559f58d48665582d3d3440021f2a'></script>
+  <title>NovaTech Solutions</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    * {
       margin: 0;
-      background-color: #f9f9f9;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
-    .form-container {
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 80px 40px;
+      text-align: center;
       background: white;
     }
-    label, input {
-      display: block;
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+      color: #4b5563;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 60px 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
       margin-bottom: 10px;
+      color: #111827;
     }
-    input[type="email"],
-    input[type="text"],
-    input[type="tel"] {
-      padding: 8px;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111827;
       color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Email Subscription</h2>
-    <form id="subscriptionForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+  <header>
+    <h2>NovaTech Solutions</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+  <section class="hero">
+    <h1>Innovative Digital Solutions</h1>
+    <p>
+      NovaTech Solutions helps businesses grow with modern web technologies,
+      cloud services, and digital transformation strategies.
+    </p>
+  </section>
 
-      <label for="mobile">Mobile:</label>
-      <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+  <section class="services">
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Responsive and scalable websites tailored for modern businesses.</p>
+    </div>
 
-      <button type="submit" onclick="identify_call()">Subscribe</button>
-    </form>
+    <div class="card">
+      <h3>Cloud Services</h3>
+      <p>Secure and optimized cloud infrastructure solutions for your company.</p>
+    </div>
 
-    <script>
-      function identify_call() {
-        var new_contact = {
-          "Name": document.getElementById("name").value,
-          "Email": document.getElementById("email").value,
-          "Mobile": document.getElementById("mobile").value,
-          "User Agent": "testing123909"
-        };
-        var identifier = document.getElementById("email").value;
-        fwcrm.identify(identifier, new_contact);
-      }
-    </script>
-  </div>
+    <div class="card">
+      <h3>Business Automation</h3>
+      <p>Automate workflows and improve productivity with smart integrations.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 NovaTech Solutions. All rights reserved.</p>
+  </footer>
 </body>
 </html>
-
