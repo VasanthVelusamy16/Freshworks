@@ -1,84 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script
-src='//fw-cdn.com/11827178/4425637.js'
-chat='true'>
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Web Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f9f9f9;
-        }
-        .form-container {
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: white;
-        }
-        label, input {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="email"] {
-            padding: 8px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <script src="[code.jquery.com](https://code.jquery.com/jquery-3.6.0.min.js)"></script>
+  <script src='//fw-cdn.com/11827178/4425637.js' chat='true'></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Web Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .form-container {
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="email"],
+    input[type="text"],
+    input[type="tel"] {
+      padding: 8px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Email Subscription</h2>
-          <form>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-       <input type="submit" onclick="identify_call()">
+  <div class="form-container">
+    <h2>Email Subscription</h2>
+    <form id="subscriptionForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="mobile">Mobile:</label>
+      <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+
+      <button type="submit" onclick="identify_call()">Subscribe</button>
     </form>
 
-<script>
-    function identify_call() {
+    <script>
+      function identify_call() {
         var new_contact = {
-            "First name": document.getElementById("first_name_2").value,
-            "Last name": document.getElementById("last_name_2").value,
-            "Email": document.getElementById("email_2").value,
-            "Mobile": document.getElementById("mobile_2").value,
-            "User Agent":"testing123909",
-            "company": {
-                "Name": document.getElementById("company_name_2").value
-            }
+          "Name": document.getElementById("name").value,
+          "Email": document.getElementById("email").value,
+          "Mobile": document.getElementById("mobile").value,
+          "User Agent": "testing123909"
         };
-        var identifier = document.getElementById("email_2").value; // Using email as identifier
+        var identifier = document.getElementById("email").value;
         fwcrm.identify(identifier, new_contact);
-        // You might need to handle the submission of the form here, e.g., redirecting to another page or displaying a success message
-    }
-</script>
-      <script>
-document.querySelector("body > div.form-container > form").id = "Hi There!";
-</script>
-    </div>
+      }
+    </script>
+  </div>
 </body>
 </html>
